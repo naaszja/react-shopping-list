@@ -4,6 +4,10 @@ function markPurchased(id) {
     console.log('in mark purchased');
 }
 
+function deleteItem(id) {
+    console.log('in delete');
+}
+
 function ShoppingList({ shoppingList }) {
 
     return (
@@ -16,6 +20,7 @@ function ShoppingList({ shoppingList }) {
                         <th>Unit</th>
                         <th>Purchased</th>
                         <th></th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -25,7 +30,8 @@ function ShoppingList({ shoppingList }) {
                         <td>{item.quantity}</td>
                         <td>{item.unit}</td>
                         <td>{shoppingList.purchased ? <p>Yes</p> : <p>No</p>}</td>
-                        <td><button onClick = {() => markPurchased(item.id)}>Purchase</button></td>
+                        <td><button onClick = {() => markPurchased(item.id)}>{!shoppingList.purchased ? <p>Purchase</p> : <p>No!</p>}</button></td>
+                        <td><button onClick = {() => deleteItem(item.id)}>{!shoppingList.purchased ? <p>Delete</p> : <p>No!</p>}</button></td>
                     </tr>)
                     )}
                 </tbody>
