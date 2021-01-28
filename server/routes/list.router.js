@@ -56,7 +56,7 @@ router.get('/', (req, res) => {
         });
 });// end GET route
 
-router.delete('/:id', (req, res) => {
+router.delete('/deleteid/:id', (req, res) => {
     let id = req.params.id
     console.log('Deleting item number', id);
 
@@ -67,5 +67,18 @@ router.delete('/:id', (req, res) => {
         res.sendStatus(204)
     })
 })
+
+router.delete('/clear', (req, res) => {
+    console.log('Clearing list');
+
+    let queryText = `DELETE FROM "shopping_list";`;
+
+    pool.query(queryText).then(() => {
+        res.sendStatus(204);
+    }).catch(err => {
+        console.log(`Error making database query ${queryText}`, err);
+            res.sendStatus(500);
+    });
+});
 
 module.exports = router;
