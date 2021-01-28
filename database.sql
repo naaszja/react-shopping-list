@@ -2,11 +2,11 @@
 -- It is also helpful to include some test data
 
 CREATE TABLE shopping_List(
-  “id” serial primary key not null
+       “id” serial primary key NOT NULL,
        "name" VARCHAR (80) NOT NULL,
        "quantity" DECIMAL (3, 2),
        "unit" VARCHAR (20) NOT NULL,
-      “purchased” boolean DEFAULT = false
+       “purchased” boolean DEFAULT = false
 )
 
 INSERT INTO "shopping_list" ("name", "quantity", "unit")
