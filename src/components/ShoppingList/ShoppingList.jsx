@@ -1,5 +1,9 @@
 import './ShoppingList.css';
 
+function markPurchased(id) {
+    console.log('in mark purchased');
+}
+
 function ShoppingList({ shoppingList }) {
 
     return (
@@ -11,6 +15,7 @@ function ShoppingList({ shoppingList }) {
                         <th>Quantity</th>
                         <th>Unit</th>
                         <th>Purchased</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -19,7 +24,8 @@ function ShoppingList({ shoppingList }) {
                         <td>{item.name}</td>
                         <td>{item.quantity}</td>
                         <td>{item.unit}</td>
-                        <td>{shoppingList.purchased ? <p>In Cart</p> : <p>No</p>}</td>
+                        <td>{shoppingList.purchased ? <p>Yes</p> : <p>No</p>}</td>
+                        <td><button onClick = {() => markPurchased(item.id)}>Purchase</button></td>
                     </tr>)
                     )}
                 </tbody>
