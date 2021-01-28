@@ -29,14 +29,8 @@ function deleteItem(id) {
                         <td>{item.name}</td>
                         <td>{item.quantity}</td>
                         <td>{item.unit}</td>
-                        <td>{shoppingList.purchased ? <p>Yes</p> : <p>No</p>}</td>
-                        <td><button id="purchased" onClick = {() => markPurchased(item.id)}>{!shoppingList.purchased ? <p>Purchase</p> : <p></p>}</button><button id="delete" onClick = {() => deleteItem(item.id)}>{!shoppingList.purchased ? <p>Delete</p> : <p></p>}</button></td>
                         <td>{item.purchased ? <p>Yes</p> : <p>No</p>}</td>
-                        <td>
-                            {!item.purchased ? <button onClick = {() => markPurchased(item.id)}><p>Purchase</p></button>:
-                            <span><em>Purchased!</em></span>}
-                        </td>
-                        <td><button onClick = {() => deleteItem(item.id)}><p>Delete</p></button></td>
+                        <td><button id="purchased" onClick = {() => markPurchased(item.id)}>{!shoppingList.purchased ? <p>Purchase</p> : <p></p>}</button><button id="delete" onClick = {() => deleteItem(item.id)}>{!shoppingList.purchased ? <p>Delete</p> : <p></p>}</button></td>
                     </tr>)
                     )}
                 </tbody>
