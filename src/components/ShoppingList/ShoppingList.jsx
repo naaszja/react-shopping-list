@@ -31,7 +31,7 @@ function ShoppingList({ shoppingList }) {
                         <td>{item.unit}</td>
                         <td>{shoppingList.purchased ? <p>Yes</p> : <p>No</p>}</td>
                         <td><button onClick = {() => markPurchased(item.id)}>{!shoppingList.purchased ? <p>Purchase</p> : <p></p>}</button></td>
-                        <td><button onClick = {() => deleteItem(item.id)}>{!shoppingList.purchased ? <p>Purchase</p> : <p></p>}</button></td>
+                        <td><button onClick = {() => deleteItem(item.id)}>{!shoppingList.purchased ? <p>Delete</p> : <p></p>}</button></td>
                     </tr>)
                     )}
                 </tbody>
