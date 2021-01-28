@@ -46,7 +46,7 @@ router.post('/', (req, res) => {
             res.sendStatus(500);
         });
     });
-
+    
 router.get('/', (req, res) => {
     // Get all of the treats from the database
     const sqlText = `SELECT * FROM "shopping_list"`;
