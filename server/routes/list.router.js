@@ -49,7 +49,7 @@ router.post('/', (req, res) => {
 
 router.get('/', (req, res) => {
     // Get all of the treats from the database
-    const sqlText = `SELECT * FROM "shopping_list"`;
+    const sqlText = `SELECT * FROM "shopping_list" ORDER BY "name" ASC, "purchased";`;
     pool.query(sqlText)
         .then((result) => {
             res.send(result.rows);
