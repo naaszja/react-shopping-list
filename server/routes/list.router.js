@@ -45,8 +45,8 @@ router.post('/', (req, res) => {
             console.log(`Error making database query ${sqlText}`, error);
             res.sendStatus(500);
         });
-    });
-    
+});
+
 router.get('/', (req, res) => {
     // Get all of the treats from the database
     const sqlText = `SELECT * FROM "shopping_list"`;
@@ -56,5 +56,16 @@ router.get('/', (req, res) => {
         });
 });// end GET route
 
+router.delete('/:id', (req, res) => {
+    let id = req.params.id
+    console.log('Deleting item number', id);
+
+    let queryText = `DELETE FROM "shopping_list"
+                    WHERE "id" = $1`
+    pool.query(queryText, [id]).then((results) => {
+        console.log(results.rows);
+        res.sendStatus(204)
+    })
+})
 
 module.exports = router;
