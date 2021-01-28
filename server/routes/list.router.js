@@ -15,6 +15,7 @@ router.post('/', (req, res) => {
             console.log(`Error making database query ${sqlText}`, error);
             res.sendStatus(500);
         });
+    });
 
 router.get('/', (req, res) => {
     // Get all of the treats from the database
