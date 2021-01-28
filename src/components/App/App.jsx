@@ -38,6 +38,18 @@ function App() {
             getShoppingList();
         })
     }
+    const updatePurchased = (id, change) => {
+        axios({
+            method: 'PUT',
+            url: `/list/update/${id}`,
+            data: {
+                purchasedChange: change
+            }
+        }).then(response => {
+            getShoppingList();
+        });
+    };
+
     return (
         <div className="App">
             <Header />
@@ -51,7 +63,7 @@ function App() {
                     setNewItemUnit = {setNewItemUnit}
                     addListItem = {addListItem}
                 />
-                <ShoppingList shoppingList={shoppingList}/>
+                <ShoppingList shoppingList={shoppingList} updatePurchased = {updatePurchased}/>
             </main>
         </div>
     );
