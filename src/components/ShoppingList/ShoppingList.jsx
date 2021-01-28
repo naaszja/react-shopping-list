@@ -35,7 +35,7 @@ function deleteItem(id) {
                             {!item.purchased ? <button onClick = {() => markPurchased(item.id)}><p>Purchase</p></button>:
                             <span><em>Purchased!</em></span>}
                         </td>
-                        <td><button onClick = {() => deleteItem(item.id)}>{!item.purchased ? <p>Delete</p> : <p></p>}</button></td>
+                        <td><button onClick = {() => deleteItem(item.id)}><p>Delete</p></button></td>
                     </tr>)
                     )}
                 </tbody>
