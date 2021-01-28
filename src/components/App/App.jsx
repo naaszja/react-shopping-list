@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Header from '../Header/Header.jsx'
 import './App.css';
-
+import ShoppingList from '../ShoppingList/ShoppingList.jsx'
 
 function App() {
 
@@ -19,7 +19,6 @@ function App() {
         }).then((response)=> {
             console.log(response.data);
             setShoppingList(response.data);
-            <ShoppingList/>
         })
     }
 
@@ -28,6 +27,7 @@ function App() {
             <Header />
             <main>
                 <p>Under Construction...</p>
+                <ShoppingList shoppingList={shoppingList}/>
             </main>
         </div>
     );
