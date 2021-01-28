@@ -4,6 +4,7 @@ import Header from '../Header/Header.jsx'
 import './App.css';
 import ShoppingList from '../ShoppingList/ShoppingList.jsx';
 import ItemForm from '../ItemForm/ItemForm.jsx';
+import Buttons from '../ButtonsComponent/ButtonsComponent.jsx';
 
 function App() {
 
@@ -49,6 +50,25 @@ function App() {
             getShoppingList();
         });
     };
+    const resetPurchased = () => {
+        axios({
+            method: 'PUT',
+            url: `/list/reset`,
+        }).then(response => {
+            console.log('Reset list succsessfully');
+            getShoppingList();
+        });
+    };
+
+    const clearList = () => {
+        axios({
+            method: 'DELETE',
+            url: '/list/clear'
+        }).then(() => {
+            console.log('Cleared list successfully');
+            getShoppingList();
+        });
+    };
 
     return (
         <div className="App">
@@ -63,6 +83,7 @@ function App() {
                     setNewItemUnit = {setNewItemUnit}
                     addListItem = {addListItem}
                 />
+                <Buttons resetPurchased = {resetPurchased} clearList = {clearList}/>
                 <ShoppingList shoppingList={shoppingList} updatePurchased = {updatePurchased}/>
             </main>
         </div>
