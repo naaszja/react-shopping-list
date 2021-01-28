@@ -1,3 +1,5 @@
+import './ItemForm.css'
+
 function ItemForm(props) {
     console.log('ItemForm props:', props);
     return (
@@ -17,7 +19,7 @@ function ItemForm(props) {
                 id="unit"
                 value={props.newItemUnit}
                 onChange={(event) => props.setNewItemUnit(event.target.value)} required />
-            <button type="submit">Add New Item</button>
+            <button clas ="ripple"id="submit" type="submit">Add New Item</button>
         </form>
     )
 }
