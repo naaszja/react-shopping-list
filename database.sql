@@ -1,6 +1,7 @@
 -- Don't forget to add your create table SQL 
 -- It is also helpful to include some test data
 
+
 CREATE TABLE shopping_List(
        “id” serial primary key NOT NULL,
        "name" VARCHAR (80) NOT NULL,
@@ -11,3 +12,4 @@ CREATE TABLE shopping_List(
 
 INSERT INTO "shopping_list" ("name", "quantity", "unit")
 VALUES ('eggs', '2', 1);
+
