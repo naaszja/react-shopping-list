@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Header from '../Header/Header.jsx'
@@ -27,7 +26,6 @@ function App() {
         <div className="App">
             <Header />
             <main>
-                <p>Under Construction...</p>
                 <ShoppingList shoppingList={shoppingList}/>
             </main>
         </div>
