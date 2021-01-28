@@ -3,7 +3,7 @@ const router = express.Router();
 const pool = require('../modules/pool.js');
 
 // TODO - Add routes here...
-router.put('/reset/:id', (req, res) => {
+router.put('/update/:id', (req, res) => {
     let purchasedChange = req.body.purchasedChange;
     let itemId = req.params.id;
     console.log(`Updating purchased to ${purchasedChange} at id:`, itemId);

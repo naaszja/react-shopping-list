@@ -1,10 +1,11 @@
 import './ShoppingList.css';
 
-function markPurchased(id) {
-    console.log('in mark purchased');
-}
+function ShoppingList({ shoppingList, updatePurchased }) {
 
-function ShoppingList({ shoppingList }) {
+    const markPurchased = (id, status) => {
+        console.log('in mark purchased');
+        updatePurchased(id, !status);
+    };
 
     return (
         <>
@@ -24,8 +25,8 @@ function ShoppingList({ shoppingList }) {
                         <td>{item.name}</td>
                         <td>{item.quantity}</td>
                         <td>{item.unit}</td>
-                        <td>{shoppingList.purchased ? <p>Yes</p> : <p>No</p>}</td>
-                        <td><button onClick = {() => markPurchased(item.id)}>Purchase</button></td>
+                        <td>{item.purchased ? <p>Yes</p> : <p>No</p>}</td>
+                        <td><button onClick = {() => markPurchased(item.id, item.purchased)}>Purchase</button></td>
                     </tr>)
                     )}
                 </tbody>
