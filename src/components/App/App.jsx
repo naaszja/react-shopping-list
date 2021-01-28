@@ -6,22 +6,36 @@ import ShoppingList from '../ShoppingList/ShoppingList.jsx'
 
 function App() {
 
-        useEffect(() => {
+    useEffect(() => {
         getShoppingList();
-      }, []); 
+    }, []);
 
-      let [shoppingList, setShoppingList] = useState([])
+    let [shoppingList, setShoppingList] = useState([])
 
-      const getShoppingList = () => { 
+    const getShoppingList = () => {
         axios({
             method: 'GET',
             url: '/list'
-        }).then((response)=> {
+        }).then((response) => {
             console.log(response.data);
             setShoppingList(response.data);
         })
     }
-
+    const addListItem = (NewItem) => {
+        console.log(NewItem);
+        // POST your data here
+        axios({
+            method: 'POST',
+            url: '/list',
+            data: {
+                name,
+                quantity,
+                unit,
+            }
+        }).then(response => {
+            getShoppingList();
+        })
+    }
     return (
         <div className="App">
             <Header />
