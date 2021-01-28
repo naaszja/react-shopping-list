@@ -1,0 +1,26 @@
+form {
+    display: flex;
+    justify-content: center;
+    padding:20px;
+}
+label {
+    padding:10px;
+    margin: 1px;
+    color:white;
+}
+
+#submit {
+    width : 100px;
+    height:20px;
+    margin:5px;
+    background-color:green;
+    color:white;
+    transition: .5s ease-out;
+}
+#submit:hover {
+    background-color:white;
+    color:black;
+}
+input:hover {
+    background-color:gray;
+}
