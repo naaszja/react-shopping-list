@@ -1,8 +1,4 @@
-function Buttons ({resetPurchased}) {
-
-    const clearList = () => {
-        console.log('In clearList');
-    };
+function Buttons ({resetPurchased, clearList}) {
 
     return (
         <>

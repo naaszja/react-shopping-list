@@ -60,6 +60,16 @@ function App() {
         });
     };
 
+    const clearList = () => {
+        axios({
+            method: 'DELETE',
+            url: '/list/clear'
+        }).then(() => {
+            console.log('Cleared list successfully');
+            getShoppingList();
+        });
+    };
+
     return (
         <div className="App">
             <Header />
@@ -73,7 +83,7 @@ function App() {
                     setNewItemUnit = {setNewItemUnit}
                     addListItem = {addListItem}
                 />
-                <Buttons resetPurchased = {resetPurchased}/>
+                <Buttons resetPurchased = {resetPurchased} clearList = {clearList}/>
                 <ShoppingList shoppingList={shoppingList} updatePurchased = {updatePurchased}/>
             </main>
         </div>
