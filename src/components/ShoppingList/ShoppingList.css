@@ -1,0 +1,10 @@
+td{
+    border: solid black 1px;
+    text-align: center;
+    padding: 1% 3%;
+    }
+
+th {
+    border: solid red 5px;
+    background-color: darkcyan;
+}
