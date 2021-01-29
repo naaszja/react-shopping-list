@@ -38,6 +38,9 @@ function App() {
             }
         }).then(response => {
             getShoppingList();
+            setNewItemName('');
+            setNewItemUnit('');
+            setNewItemQuantity('');
         })
     }
     const updatePurchased = (id, change) => {
