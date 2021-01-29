@@ -15,6 +15,7 @@ function App() {
     let [newItemName, setNewItemName] = useState('');
     let [newItemQuantity, setNewItemQuantity] = useState('');
     let [newItemUnit, setNewItemUnit] = useState('');
+    
     const getShoppingList = () => {
         axios({
             method: 'GET',
@@ -31,7 +32,7 @@ function App() {
             method: 'POST',
             url: '/list',
             data: {
-                name: newItemName,          
+                name: newItemName,
                 quantity: newItemQuantity,
                 unit: newItemUnit,
             }
@@ -70,21 +71,31 @@ function App() {
         });
     };
 
+    const deleteItem = (itemId) => {
+        axios({
+            method: "DELETE",
+            url: `/list/${itemId}`,
+        }).then((response) => {
+            console.log(response.data);
+             getShoppingList();
+        })
+    };
+
     return (
         <div className="App">
             <Header />
             <main>
-                <ItemForm 
-                    newItemName = {newItemName}
-                    newItemQuantity = {newItemQuantity}
-                    newItemUnit = {newItemUnit}
-                    setNewItemName = {setNewItemName}
-                    setNewItemQuantity = {setNewItemQuantity}
-                    setNewItemUnit = {setNewItemUnit}
-                    addListItem = {addListItem}
+                <ItemForm
+                    newItemName={newItemName}
+                    newItemQuantity={newItemQuantity}
+                    newItemUnit={newItemUnit}
+                    setNewItemName={setNewItemName}
+                    setNewItemQuantity={setNewItemQuantity}
+                    setNewItemUnit={setNewItemUnit}
+                    addListItem={addListItem}
                 />
-                <Buttons resetPurchased = {resetPurchased} clearList = {clearList}/>
-                <ShoppingList shoppingList={shoppingList} updatePurchased = {updatePurchased}/>
+                <Buttons resetPurchased={resetPurchased} clearList={clearList} />
+                <ShoppingList deleteItem={deleteItem} shoppingList={shoppingList} updatePurchased={updatePurchased} />
             </main>
         </div>
     );

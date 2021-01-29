@@ -1,15 +1,11 @@
 import './ShoppingList.css';
 
-function ShoppingList({ shoppingList, updatePurchased }) {
+function ShoppingList({ shoppingList, updatePurchased, deleteItem }) {
 
       const markPurchased = (id, status) => {
         console.log('in mark purchased');
         updatePurchased(id, !status);
     };
-
-function deleteItem(id) {
-    console.log('in delete');
-}
 
     return (
         <>
