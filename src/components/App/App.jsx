@@ -38,6 +38,9 @@ function App() {
             }
         }).then(response => {
             getShoppingList();
+            setNewItemName('');
+            setNewItemUnit('');
+            setNewItemQuantity('');
         })
     }
     const updatePurchased = (id, change) => {
@@ -74,7 +77,7 @@ function App() {
     const deleteItem = (itemId) => {
         axios({
             method: "DELETE",
-            url: `/list/${itemId}`,
+            url: `/list/delete/${itemId}`,
         }).then((response) => {
             console.log(response.data);
              getShoppingList();
