@@ -7,10 +7,6 @@ function ShoppingList({ shoppingList, updatePurchased, deleteItem }) {
         updatePurchased(id, !status);
     };
 
-function deleteItem(id) {
-    console.log('in delete');
-}
-
     return (
         <>
             <table className='shoppingList-Table' >
