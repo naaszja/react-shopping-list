@@ -40,7 +40,7 @@ function ShoppingList({ shoppingList, updatePurchased, deleteItem }) {
                         <td>{item.quantity}</td>
                         <td>{item.unit}</td>
                         <td>{item.purchased ? <p>Yes</p> : <p>No</p>}</td>
-                        <td><button id="purchased" onClick={() => markPurchased(item.id)}>{!shoppingList.purchased ? <p>Purchase</p> : <p></p>}</button><button id="delete" onClick={() =>Swal.fire({title: 'Are you sure you want to delete item?', text: 'Item will be lost forever.', icon: 'warning', showCancelButton: true, confirmButtonColor: '#3085d6', cancelButtonColor: '#d33', confirmButtonText: 'Yes!'}).then((result) => {if(result.value){deleteItem(item.id)}}) }>{!shoppingList.purchased ? <p>Delete</p> : <p></p>}</button></td>
+                        <td><button id="purchased" hidden={item.purchased} onClick={() => markPurchased(item.id)}>{!shoppingList.purchased ? <p>Purchase</p> : <p></p>}</button><button id="delete" onClick={() =>Swal.fire({title: 'Are you sure you want to delete item?', text: 'Item will be lost forever.', icon: 'warning', showCancelButton: true, confirmButtonColor: '#3085d6', cancelButtonColor: '#d33', confirmButtonText: 'Yes!'}).then((result) => {if(result.value){deleteItem(item.id)}}) }>{!shoppingList.purchased ? <p>Delete</p> : <p></p>}</button></td>
                     </tr>)
                     )}
                 </tbody>
