@@ -6,3 +6,20 @@ button {
     height: 40px;
     margin: 5px;
 }
+#clear:hover {
+    transition: .5s ease-out;
+    background-color: red;
+}
+#reset:hover {
+    transition: .5s ease-out;
+    background-color:yellow;
+    color: black
+}
+#clear {
+    background-color:yellow;
+    color:black;
+}
+#reset {
+    background-color:red;
+    color:white;
+}
